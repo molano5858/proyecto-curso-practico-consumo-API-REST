@@ -1,0 +1,19 @@
+{
+  "name": "proyecto-curso-practico-consumo-api-rest",
+  "version": "1.0.0",
+  "description": "Proyecto del Curso práctico de consumo de API REST",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/molano5858/proyecto-curso-practico-consumo-API-REST.git"
+  },
+  "author": "Felipe Molano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/molano5858/proyecto-curso-practico-consumo-API-REST/issues"
+  },
+  "homepage": "https://github.com/molano5858/proyecto-curso-practico-consumo-API-REST#readme"
+}
