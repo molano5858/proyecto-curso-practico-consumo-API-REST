@@ -15,6 +15,8 @@ async function getTrendingMoviesPreview() {
   const { data } = await api("/trending/movie/day");
   const movies = data.results;
 
+  trendingMoviesPreviewList.innerHTML = "";
+
   movies.forEach((movie) => {
     const movieContainer = document.createElement("div");
     movieContainer.classList.add("movie-container");
@@ -27,10 +29,11 @@ async function getTrendingMoviesPreview() {
     );
 
     movieContainer.appendChild(movieImg);
-    const trendingContainer = document.querySelector(
-      "#trendingPreview .trendingPreview-movieList"
-    );
-    trendingContainer.appendChild(movieContainer);
+    // const trendingContainer = document.querySelector(
+    //   "#trendingPreview .trendingPreview-movieList"
+    // );
+    // trendingContainer.appendChild(movieContainer);
+    trendingMoviesPreviewList.appendChild(movieContainer);
   });
 }
 
@@ -39,20 +42,19 @@ async function getCategoriesPreview() {
   // const data = await rest.json(); ESTA PARTE NO ES NECESARIA CON AXIOS YA QUE NOS LO DEVUELVE "PARSEADO"
   const genres = data.genres;
 
+  categoriesPreviewList.innerHTML = "";
+
   genres.forEach((genre) => {
     const categoryContainer = document.createElement("div");
     const categoryName = document.createElement("h3");
-    const categoriesPreviewContainer = document.querySelector(
-      "#categoriesPreview .categoriesPreview-list"
-    );
     categoryContainer.classList.add("category-container");
     categoryName.setAttribute("id", `id` + genre.id);
     categoryName.classList.add("category-title");
     categoryName.innerHTML = genre.name;
     categoryContainer.appendChild(categoryName);
-    categoriesPreviewContainer.appendChild(categoryContainer);
+    categoriesPreviewList.appendChild(categoryContainer);
   });
 }
 
-getTrendingMoviesPreview();
-getCategoriesPreview();
+// getTrendingMoviesPreview();
+// getCategoriesPreview();Estas dos funciones las vamos a ejecutar solo cuando estemos en la pagina home, sea que las voy ejecutar solo en archivo navigation en la funcion homePage()
